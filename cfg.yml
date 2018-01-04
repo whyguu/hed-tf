@@ -1,0 +1,40 @@
+## loss parameters
+# sides weights
+sides_weights:
+  - 1.0 # side0
+  - 1.0 # side1
+  - 1.0 # side2
+  - 1.0 # side3
+  - 1.0 # side4
+# class balance weights
+pos_weights: 53.4698638405
+# use deep supervising if is_deep_supervised is true else just using fused side
+is_deep_supervised: True
+# use weight decay
+use_weight_regularizer: True
+# weight decay ratio
+weight_decay_ratio: 0.0002
+## train parameters
+log_dir: './logs/'
+model_weights_path: './data/weights/model_weights/'
+init_weights: './data/weights/initial_weights/vgg16.npy'
+image_path: './data/dataset/train_data/'
+file_name: './data/dataset/train.txt'
+
+batch_size: 20
+max_epochs: 300
+snapshot_epochs: 60
+## data process parameters
+height: 448
+width: 448
+channel: 3
+
+mean:
+  - 122.20417892 # blue
+  - 119.55591164 # green
+  - 123.94569574 # red
+
+
+#53.4698638405
+#448 448 974
+#b, g, r =  [ 122.20417892  119.55591164  123.94569574]
