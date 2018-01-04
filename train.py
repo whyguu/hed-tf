@@ -76,7 +76,7 @@ class DataSet(object):
 
 def arg_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-gpu', type=str, required=False, default='1')
+    parser.add_argument('-gpu', type=str, required=False, default='0')
     args = parser.parse_args()
     return args
 
