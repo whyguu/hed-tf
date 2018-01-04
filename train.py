@@ -125,12 +125,14 @@ if __name__ == "__main__":
     with tf.Session(graph=tf.get_default_graph(), config=config) as sess:
         saver = tf.train.Saver()
 
-        # sess.run(tf.global_variables_initializer())
-        # # initialize with vgg16 weights trained on imagenet
-        # hed_class.assign_init_weights(sess)
+        # ################## initialize start ###############
+        sess.run(tf.global_variables_initializer())
+        # initialize with vgg16 weights trained on imagenet
+        hed_class.assign_init_weights(sess)
         #
-        saver.restore(sess, cfg['model_weights_path']+'vgg16_hed-150')
-        sess.run(tf.assign(global_step, 0))  # lr is relative to init lr and global_step, so initializing global_step makes lr initialized by your assignment
+        # saver.restore(sess, cfg['model_weights_path']+'vgg16_hed-150')
+        # sess.run(tf.assign(global_step, 0))  # lr is relative to init lr and global_step, so initializing global_step makes lr initialized by your assignment
+        # ################## initialize end ###############
 
         summary_writer = tf.summary.FileWriter(cfg['log_dir'], graph=sess.graph, flush_secs=15)
         step = 0
