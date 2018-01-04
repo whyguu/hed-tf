@@ -17,6 +17,7 @@ python train.py -gpu '0' # default gpu 0
 p.s. it seems that if you do not have gpu ,tf will run it in cpu in this program
 
 ## Attention
+change the learning rate in train.py
 
 this repository is not exactly identical to hed paper.
 
