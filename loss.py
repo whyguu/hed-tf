@@ -19,7 +19,7 @@ class HedLoss(object):
         if self.cfg['is_deep_supervised']:
             for n in range(len(self.sides)-1):
                 tp_loss = self.cfg['sides_weights'][n] * tf.nn.weighted_cross_entropy_with_logits(targets=self.label, logits=self.sides[n], pos_weight=self.cfg['pos_weights'])
-                self.loss = tf.reduce_mean(tp_loss)
+                self.loss += tf.reduce_mean(tp_loss)
         self.loss += tf.reduce_mean(tf.nn.weighted_cross_entropy_with_logits(targets=self.label, logits=self.sides[-1], pos_weight=self.cfg['pos_weights']))
 
         reg_loss = tf.get_collection(tf.GraphKeys.REGULARIZATION_LOSSES)
