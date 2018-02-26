@@ -112,7 +112,7 @@ if __name__ == '__main__':
     sess = tf.Session(config=config)
     saver = tf.train.Saver()
     # load weights
-    saver.restore(sess, cfg['model_weights_path'] + '/vgg16_hed-88')
+    saver.restore(sess, cfg['model_weights_path'] + 'vgg16_hed-88')
 
     output_img = predict_big_map(img_path=path, out_shape=(448, 448), inner_shape=(224, 224), out_channel=1,
                                  pred_fun=(lambda ipt: sess.run(sides, feed_dict={hed_class.x: ipt})), mean=cfg['mean'])
