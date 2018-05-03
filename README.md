@@ -6,6 +6,7 @@
 
 ### vgg16 weights
 google for vgg16.npy weights file and put it in ./data/weights/initial_weights/
+
 no need to google, it is here https://mega.nz/#!VqAEETba!O1ywiCS2IiOlUCtCpI6HTJOMrneN-Qdv3ywQP5poecM
 
 p.s. if you don't use vgg16 weights just comment 'hed_class.assign_init_weights(sess)' in train.py
